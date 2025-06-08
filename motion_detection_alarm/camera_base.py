@@ -11,7 +11,12 @@ class Camera:
 
         self._cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
 
-#read a single frame from the camera
-#return the captured frame
+    def read_frame(self):
+    #read a single frame from the camera
+        _, frame = self._cap.read()
+
+        #return the captured frame
+        return frame
+    
 #release the camera resource to free it for other application
 #close all OpenCV windows that were opened
