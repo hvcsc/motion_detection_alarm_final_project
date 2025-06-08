@@ -7,6 +7,9 @@ class Camera:
         self._cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
         #set the height and width of the video frame
+        self._cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
+
+        self._cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
 
 #read a single frame from the camera
 #return the captured frame
