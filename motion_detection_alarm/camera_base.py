@@ -17,6 +17,9 @@ class Camera:
 
         #return the captured frame
         return frame
-    
-#release the camera resource to free it for other application
-#close all OpenCV windows that were opened
+    def release(self):
+        #release the camera resource to free it for other application
+        self._cap.release()
+
+        #close all OpenCV windows that were opened
+        cv2.destroyAllWindows()
