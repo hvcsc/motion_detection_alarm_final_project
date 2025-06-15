@@ -12,3 +12,4 @@ class FrameProcessor:
         frame = cv2.GaussianBlur(frame, (5, 5), 0)
 
         #return processed frame
+        return frame
