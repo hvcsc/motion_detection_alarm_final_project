@@ -27,5 +27,8 @@ class AlarmManager:
             print("ALARM")
             winsound.Beep(2500, 1000)
         self._alarm_active = False
-        
+
     #property to access the current alarm mode
+    @property
+    def alarm_mode(self):
+        return self._alarm_mode 
