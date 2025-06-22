@@ -28,7 +28,12 @@ class MotionDetector:
             print("ALARM")
             winsound.Beep(2500, 1000)
         self._alarm_active = False
-        
+
     #triggers the alarm if not already active
+    def _trigger_alarm(self):
+        if not self._alarm_active:
+            self._alarm_active = True
+            threading.Thread(target = self._play_alarm, daemon = True).start()
+
     #start the motion detection loop
     #release camera and close all windows
