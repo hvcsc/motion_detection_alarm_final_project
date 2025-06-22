@@ -19,8 +19,16 @@ class MotionDetector:
         #read and preprocess the initial frame
         frame = self._camera.read_frame()
         self._reference_frame = self._frame_processor.preprocess(frame)
-        
+
     #play beeping alarm
+    def _play_alarm(self):
+        for _ in range(3):
+            if not self._alarm_mode:
+                break
+            print("ALARM")
+            winsound.Beep(2500, 1000)
+        self._alarm_active = False
+        
     #triggers the alarm if not already active
     #start the motion detection loop
     #release camera and close all windows
