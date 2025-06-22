@@ -18,6 +18,14 @@ class AlarmManager:
         if not self._alarm_active:
             self._alarm_active = True
             threading.Thread(target = self._play_alarm, daemon = True).start()
-            
+
     #play beeping sound unless turned off
+    def _play_alarm(self):
+        for _ in range(3):
+            if not self._alarm_mode:
+                break
+            print("ALARM")
+            winsound.Beep(2500, 1000)
+        self._alarm_active = False
+        
     #property to access the current alarm mode
