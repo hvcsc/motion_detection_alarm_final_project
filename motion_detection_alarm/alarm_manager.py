@@ -7,8 +7,12 @@ class AlarmManager:
     def __init__(self):
         self._alarm_active = False
         self._alarm_mode = False
-        
+
     #enable or disable alarm mode
+    def toggle_alarm_mode(self):
+        self._alarm_mode = not self._alarm_mode
+        return self._alarm_mode 
+
     #start the alarm sound if it's not already active
     #play beeping sound unless turned off
     #property to access the current alarm mode
