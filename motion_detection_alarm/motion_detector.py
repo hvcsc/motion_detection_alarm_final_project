@@ -17,7 +17,10 @@ class MotionDetector:
         self._alarm_counter = 0
 
         #read and preprocess the initial frame
-#play beeping alarm
-#triggers the alarm if not already active
-#start the motion detection loop
-#release camera and close all windows
+        frame = self._camera.read_frame()
+        self._reference_frame = self._frame_processor.preprocess(frame)
+        
+    #play beeping alarm
+    #triggers the alarm if not already active
+    #start the motion detection loop
+    #release camera and close all windows
