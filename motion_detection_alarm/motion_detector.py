@@ -64,4 +64,7 @@ class MotionDetector:
                 self._alarm_counter = 0
             elif key == ord("q"):
                 break
-    #release camera and close all windows
+
+        #release camera and close all windows
+        self._camera.release()
+        cv2.destroyAllWindows()
