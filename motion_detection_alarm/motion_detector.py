@@ -1,10 +1,7 @@
-#import OpenCV
-import cv2
-
-#abstract base class for motion detection
-class BaseMotionDetector:
-    def detect(self, current_frame, reference_frame):
-        #abstract methods to be overridden
-        raise NotImplementedError("This method should be overridden.")
-
-#concrete implementation using basic frame differencing
+#import from previous files
+#initiaize the variables
+#capture and initial reference frame to compare for motion detection
+#create a new frame from the webcam
+#set alarm trigger motions
+#set the toggle for the alarm
+#release the camera and close OpencCV windows
