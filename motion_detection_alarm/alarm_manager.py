@@ -11,8 +11,13 @@ class AlarmManager:
     #enable or disable alarm mode
     def toggle_alarm_mode(self):
         self._alarm_mode = not self._alarm_mode
-        return self._alarm_mode 
+        return self._alarm_mode
 
     #start the alarm sound if it's not already active
+    def trigger_alarm(self):
+        if not self._alarm_active:
+            self._alarm_active = True
+            threading.Thread(target = self._play_alarm, daemon = True).start()
+            
     #play beeping sound unless turned off
     #property to access the current alarm mode
