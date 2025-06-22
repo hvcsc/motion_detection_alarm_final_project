@@ -36,4 +36,32 @@ class MotionDetector:
             threading.Thread(target = self._play_alarm, daemon = True).start()
 
     #start the motion detection loop
+    def start(self):
+        while True:
+            frame = self._camera.read_frame()
+
+            if self._alarm_mode:
+                processed = self._frame_processor.preprocess(frame)
+                diff = cv2.absdiff(processed, self._reference_frame)
+                thresh = cv2.threshold(diff, 25, 255, cv2.THRESH_BINARY)[1]
+                self._reference_frame = processed
+
+                if thresh.sum() > 3000:
+                    self._alarm_counter += 1
+                else:
+                    self._alarm_counter = max(0, self._alarm_counter - 1)
+
+                cv2.imshow("Cam", thresh)
+            else:
+                cv2.imshow("Cam", frame)
+
+            if self._alarm_counter > 20:
+                self._trigger_alarm()
+
+            key = cv2.waitKey(1)
+            if key == ord("t"):
+                self._alarm_mode = not self._alarm_mode
+                self._alarm_counter = 0
+            elif key == ord("q"):
+                break
     #release camera and close all windows
