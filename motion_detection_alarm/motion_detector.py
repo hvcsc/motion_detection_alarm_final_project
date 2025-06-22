@@ -1,7 +1,10 @@
 #import from previous files
+from camera_base import Camera
+from frame_processor import FrameProcessor
+
 #initiaize the variables
-#capture and initial reference frame to compare for motion detection
-#create a new frame from the webcam
-#set alarm trigger motions
-#set the toggle for the alarm
-#release the camera and close OpencCV windows
+#read and preprocess the initial frame
+#play beeping alarm
+#triggers the alarm if not already active
+#start the motion detection loop
+#release camera and close all windows
