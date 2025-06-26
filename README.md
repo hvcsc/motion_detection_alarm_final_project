@@ -23,6 +23,13 @@ This project is an object-oriented Python implementation of a motion detection a
 - Press `t` to toggle the alarm mode on/off.
 - Press `q` to quit the application.
 
+## Credits
+
+This project is a refactored version of the motion detection tutorial by [NeuralNine](https://www.youtube.com/@NeuralNine).  
+Original video: [Motion Detection with Python and OpenCV](https://youtu.be/QPjPyUJeYYE?si=euYzIMx3-ZLW6EZl)
+
+Converted to an Object-Oriented Programming (OOP) structure for better modularity and readability.
+
 ## Requirements
 
 - Python 3.x
@@ -34,10 +41,3 @@ Install dependencies with:
 
 ```bash
 pip install opencv-python imutils
-
-## Credits
-
-This project is a refactored version of the motion detection tutorial by [NeuralNine](https://www.youtube.com/@NeuralNine).  
-Original video: [Motion Detection with Python and OpenCV](https://youtu.be/QPjPyUJeYYE?si=euYzIMx3-ZLW6EZl)
-
-Converted to an Object-Oriented Programming (OOP) structure for better modularity and readability.
